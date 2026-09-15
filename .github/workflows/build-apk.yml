@@ -20,41 +20,46 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
-      - name: Install NPM Dependencies
-        run: npm ci || npm install
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Build Web Production Bundle
+      - name: Build Web Application Bundle
         run: npm run build
 
       - name: Setup Java JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
+
+      - name: Accept Android SDK Licenses
+        run: |
+          mkdir -p "$ANDROID_HOME/licenses" || true
+          echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e\n24333f8a63b6825ea9c5514f83c2829b004d1fee" > "$ANDROID_HOME/licenses/android-sdk-license" || true
+          echo -e "\n84831b9409646a201b65e3e899cb51ce65c3284f" > "$ANDROID_HOME/licenses/android-sdk-preview-license" || true
+          yes | sdkmanager --licenses || true
 
       - name: Sync Capacitor Android Project
         run: npx cap sync android
 
-      - name: Make Gradle Wrapper Executable
+      - name: Grant Execute Permission for Gradlew
         run: chmod +x ./android/gradlew
 
       - name: Assemble Debug APK with Gradle
         run: |
           cd android
-          ./gradlew assembleDebug --no-daemon --stacktrace
+          ./gradlew assembleDebug --no-daemon --stacktrace -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=512m"
 
-      - name: Locate and Rename APK
+      - name: Locate and Prepare APK
         run: |
-          mkdir -p build-output
-          cp android/app/build/outputs/apk/debug/app-debug.apk build-output/HackcoTasks-v1.0.0-debug.apk
-          echo "APK generated successfully at build-output/HackcoTasks-v1.0.0-debug.apk"
+          mkdir -p dist-apk
+          find android/app/build/outputs/apk/debug/ -type f -name "*.apk" -exec cp {} dist-apk/HackcoTasks-debug.apk \;
+          ls -la dist-apk/
 
       - name: Upload APK as Release Artifact
         uses: actions/upload-artifact@v4
         with:
           name: HackcoTasks-Android-APK
-          path: build-output/HackcoTasks-v1.0.0-debug.apk
+          path: dist-apk/*.apk
           retention-days: 30
