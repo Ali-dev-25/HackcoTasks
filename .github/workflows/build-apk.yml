@@ -40,28 +40,25 @@ jobs:
       - name: Setup Capacitor Android Platform
         run: |
           rm -rf android-compose-reference
-          
-          # If android directory is incomplete or missing build.gradle, regenerate cleanly
+
+          # If android directory is missing or incomplete, initialize it directly from Capacitor's official template
           if [ ! -f "android/build.gradle" ] || [ ! -f "android/settings.gradle" ]; then
-            echo "Re-creating clean Android platform via Capacitor..."
-            rm -rf android
-            npx cap add android
+            echo "Initializing native Android project from Capacitor template..."
+            mkdir -p android
+            tar -zxvf node_modules/@capacitor/cli/assets/android-template.tar.gz -C android
           fi
 
           # Sync web assets to android
           npx cap sync android
 
-          # Ensure gradlew & wrapper are present and executable
-          if [ ! -f "android/gradlew" ]; then
-            tar -zxvf node_modules/@capacitor/cli/assets/android-template.tar.gz -C android gradlew gradle/wrapper/ || true
-          fi
+          # Ensure gradlew has executable permissions
           chmod +x android/gradlew
           ls -la android/
 
       - name: Assemble Debug APK with Gradle
         run: |
           cd android
-          ./gradlew assembleDebug --stacktrace -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=512m"
+          ./gradlew assembleDebug --no-daemon --stacktrace -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=512m"
 
       - name: Locate and Prepare APK
         run: |
