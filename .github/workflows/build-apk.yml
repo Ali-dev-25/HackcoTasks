@@ -44,8 +44,13 @@ jobs:
           else
             npx cap sync android
           fi
-          # If capacitor added android, ensure gradlew has execute permission
-          find android -name "gradlew" -exec chmod +x {} \;
+          # Ensure gradlew and wrapper exist inside android/ (extract from official template if missing)
+          if [ ! -f "android/gradlew" ]; then
+            echo "Restoring gradlew wrapper from Capacitor assets..."
+            tar -zxvf node_modules/@capacitor/cli/assets/android-template.tar.gz -C android gradlew gradle/wrapper/ || true
+          fi
+          chmod +x android/gradlew
+          ls -la android/gradlew
 
       - name: Assemble Debug APK with Gradle
         run: |
