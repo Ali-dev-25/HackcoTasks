@@ -37,16 +37,32 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Sync Capacitor Android Project
-        run: npx cap sync android
-
-      - name: Grant Execute Permission for Gradlew
-        run: chmod +x ./android/gradlew
+      - name: Sync or Add Capacitor Android Platform
+        run: |
+          if [ ! -d "android" ]; then
+            npx cap add android
+          else
+            npx cap sync android
+          fi
+          # Ensure gradlew exists; if not generate or restore wrapper
+          if [ ! -f "android/gradlew" ]; then
+            echo "gradlew not found in android/, generating with gradle wrapper..."
+            gradle wrapper || gradle wrapper --gradle-version 8.11.1
+            mv gradlew android/ 2>/dev/null || true
+            mv gradlew.bat android/ 2>/dev/null || true
+            mkdir -p android/gradle/wrapper
+            mv gradle/wrapper/* android/gradle/wrapper/ 2>/dev/null || true
+          fi
+          chmod +x android/gradlew || true
 
       - name: Assemble Debug APK with Gradle
         run: |
           cd android
-          ./gradlew assembleDebug --stacktrace -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=512m"
+          if [ -f "./gradlew" ]; then
+            ./gradlew assembleDebug --stacktrace -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=512m"
+          else
+            gradle assembleDebug --stacktrace
+          fi
 
       - name: Locate and Prepare APK
         run: |
