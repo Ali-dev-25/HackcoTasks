@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskFlow</string>
+    <string name="app_tagline">Smart Task Management &amp; Scheduling</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_tasks">Tasks</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_statistics">Statistics</string>
+    <string name="nav_settings">Settings</string>
+    <string name="action_create_task">Create Task</string>
+
+    <!-- Home Dashboard -->
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="today_progress">Today\'s Progress</string>
+    <string name="completed_tasks">Completed</string>
+    <string name="remaining_tasks">Remaining</string>
+    <string name="section_today">Today\'s Tasks</string>
+    <string name="section_upcoming">Upcoming Tasks</string>
+    <string name="section_overdue">Overdue Tasks</string>
+    <string name="productivity_summary">Productivity Summary</string>
+    <string name="empty_today">No tasks scheduled for today. Great job or time to plan!</string>
+    <string name="empty_upcoming">No upcoming tasks. Tap + to schedule ahead.</string>
+    <string name="empty_overdue">No overdue tasks. You are right on track!</string>
+
+    <!-- Task Details & Form -->
+    <string name="title_create_task">New Task</string>
+    <string name="title_edit_task">Edit Task</string>
+    <string name="label_title">Task Title</string>
+    <string name="label_description">Description</string>
+    <string name="label_date">Date</string>
+    <string name="label_start_time">Start Time</string>
+    <string name="label_end_time">End Time</string>
+    <string name="label_priority">Priority</string>
+    <string name="label_category">Category</string>
+    <string name="label_reminder">Reminder</string>
+    <string name="label_recurrence">Repeat</string>
+    <string name="label_location">Location</string>
+    <string name="label_notes">Notes</string>
+    <string name="label_subtasks">Subtasks</string>
+    <string name="action_add_subtask">Add Subtask</string>
+    <string name="action_save">Save Task</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_reschedule">Reschedule</string>
+    <string name="action_snooze">Snooze</string>
+    <string name="action_complete">Complete</string>
+
+    <!-- Priorities -->
+    <string name="priority_low">Low</string>
+    <string name="priority_medium">Medium</string>
+    <string name="priority_high">High</string>
+
+    <!-- Reminders -->
+    <string name="reminder_none">None</string>
+    <string name="reminder_at_time">At task time</string>
+    <string name="reminder_5min">5 minutes before</string>
+    <string name="reminder_10min">10 minutes before</string>
+    <string name="reminder_15min">15 minutes before</string>
+    <string name="reminder_30min">30 minutes before</string>
+    <string name="reminder_1hour">1 hour before</string>
+    <string name="reminder_1day">1 day before</string>
+
+    <!-- Recurrence -->
+    <string name="recurrence_none">One time</string>
+    <string name="recurrence_daily">Daily</string>
+    <string name="recurrence_weekly">Weekly</string>
+    <string name="recurrence_weekday">Every selected weekday</string>
+    <string name="recurrence_every_n_days">Every %1$d days</string>
+    <string name="recurrence_every_n_weeks">Every %1$d weeks</string>
+    <string name="recurrence_monthly">Monthly</string>
+    <string name="recurrence_yearly">Yearly</string>
+
+    <!-- Task Filters & Tabs -->
+    <string name="tab_all">All</string>
+    <string name="tab_today">Today</string>
+    <string name="tab_upcoming">Upcoming</string>
+    <string name="tab_overdue">Overdue</string>
+    <string name="tab_completed">Completed</string>
+    <string name="filter_search_hint">Search tasks, notes, categories...</string>
+    <string name="filter_all_categories">All Categories</string>
+    <string name="filter_all_priorities">All Priorities</string>
+    <string name="sort_by">Sort By</string>
+    <string name="sort_date">Date &amp; Time</string>
+    <string name="sort_priority">Priority</string>
+    <string name="sort_title">Title</string>
+
+    <!-- Categories -->
+    <string name="category_work">Work</string>
+    <string name="category_study">Study</string>
+    <string name="category_programming">Programming</string>
+    <string name="category_personal">Personal</string>
+    <string name="category_home">Home</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_health">Health</string>
+    <string name="category_other">Other</string>
+    <string name="add_category">Add Category</string>
+    <string name="category_name">Category Name</string>
+    <string name="category_in_use_error">Cannot delete category because tasks are assigned to it.</string>
+
+    <!-- Statistics -->
+    <string name="stats_today">Tasks Completed Today</string>
+    <string name="stats_week">Tasks Completed This Week</string>
+    <string name="stats_month">Tasks Completed This Month</string>
+    <string name="stats_rate">Completion Rate</string>
+    <string name="stats_current_streak">Current Streak</string>
+    <string name="stats_best_streak">Best Streak</string>
+    <string name="stats_days_suffix">days</string>
+    <string name="stats_by_day">Productivity by Day</string>
+    <string name="stats_by_category">Tasks by Category</string>
+
+    <!-- Settings -->
+    <string name="settings_appearance">Appearance</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System Default</string>
+    <string name="settings_language">Language</string>
+    <string name="lang_english">English (LTR)</string>
+    <string name="lang_arabic">العربية (RTL)</string>
+    <string name="settings_notifications">Notification Settings</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="sound_enabled">Sound</string>
+    <string name="vibration_enabled">Vibration</string>
+    <string name="settings_task">Task Defaults</string>
+    <string name="default_duration">Default Task Duration</string>
+    <string name="first_day_of_week">First Day of Week</string>
+    <string name="settings_data">Data Management</string>
+    <string name="export_data">Export Backup (JSON)</string>
+    <string name="import_data">Import Backup (JSON)</string>
+    <string name="sample_data">Load Sample Tasks</string>
+    <string name="clear_sample_data">Clear Sample Tasks</string>
+    <string name="settings_about">About</string>
+    <string name="app_version">Version 1.0.0 (Native Android)</string>
+    <string name="privacy_policy">Offline-First: All data stays on your device.</string>
+
+    <!-- Validation & Errors -->
+    <string name="err_empty_title">Task title cannot be empty</string>
+    <string name="err_invalid_time">End time must be after start time</string>
+    <string name="err_invalid_date">Please select a valid date</string>
+    <string name="msg_task_saved">Task saved successfully</string>
+    <string name="msg_task_deleted">Task deleted</string>
+    <string name="msg_snoozed">Reminder snoozed</string>
+</resources>

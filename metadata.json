@@ -1,0 +1,8 @@
+{
+  "name": "HackcoTasks",
+  "description": "A professional native Android task management and scheduling application with offline-first Room database, Jetpack Compose Material 3, recurring tasks, calendar, and productivity statistics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

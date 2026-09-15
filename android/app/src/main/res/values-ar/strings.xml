@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskFlow</string>
+    <string name="app_tagline">إدارة وجدولة المهام باحترافية</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_tasks">المهام</string>
+    <string name="nav_calendar">التقويم</string>
+    <string name="nav_statistics">الإحصائيات</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="action_create_task">إنشاء مهمة</string>
+
+    <!-- Home Dashboard -->
+    <string name="greeting_morning">صباح الخير</string>
+    <string name="greeting_afternoon">مساء الخير</string>
+    <string name="greeting_evening">مساء النور</string>
+    <string name="today_progress">إنجاز اليوم</string>
+    <string name="completed_tasks">المكتملة</string>
+    <string name="remaining_tasks">المتبقية</string>
+    <string name="section_today">مهام اليوم</string>
+    <string name="section_upcoming">المهام القادمة</string>
+    <string name="section_overdue">المهام المتأخرة</string>
+    <string name="productivity_summary">ملخص الإنتاجية</string>
+    <string name="empty_today">لا توجد مهام مجدولة لليوم. أحسنت أو حان وقت التخطيط!</string>
+    <string name="empty_upcoming">لا توجد مهام قادمة. اضغط + لإضافة مهام جديدة.</string>
+    <string name="empty_overdue">لا توجد مهام متأخرة. أنت تسير على المسار الصحيح!</string>
+
+    <!-- Task Details & Form -->
+    <string name="title_create_task">مهمة جديدة</string>
+    <string name="title_edit_task">تعديل المهمة</string>
+    <string name="label_title">عنوان المهمة</string>
+    <string name="label_description">الوصف</string>
+    <string name="label_date">التاريخ</string>
+    <string name="label_start_time">وقت البدء</string>
+    <string name="label_end_time">وقت الانتهاء</string>
+    <string name="label_priority">الأولوية</string>
+    <string name="label_category">التصنيف</string>
+    <string name="label_reminder">التذكير</string>
+    <string name="label_recurrence">التكرار</string>
+    <string name="label_location">الموقع</string>
+    <string name="label_notes">ملاحظات</string>
+    <string name="label_subtasks">المهام الفرعية</string>
+    <string name="action_add_subtask">إضافة مهمة فرعية</string>
+    <string name="action_save">حفظ المهمة</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_reschedule">إعادة جدولة</string>
+    <string name="action_snooze">تأجيل</string>
+    <string name="action_complete">إكمال</string>
+
+    <!-- Priorities -->
+    <string name="priority_low">منخفضة</string>
+    <string name="priority_medium">متوسطة</string>
+    <string name="priority_high">عالية</string>
+
+    <!-- Reminders -->
+    <string name="reminder_none">بدون تذكير</string>
+    <string name="reminder_at_time">في وقت المهمة</string>
+    <string name="reminder_5min">قبل 5 دقائق</string>
+    <string name="reminder_10min">قبل 10 دقائق</string>
+    <string name="reminder_15min">قبل 15 دقيقة</string>
+    <string name="reminder_30min">قبل 30 دقيقة</string>
+    <string name="reminder_1hour">قبل ساعة</string>
+    <string name="reminder_1day">قبل يوم واحد</string>
+
+    <!-- Recurrence -->
+    <string name="recurrence_none">مرة واحدة</string>
+    <string name="recurrence_daily">يومي</string>
+    <string name="recurrence_weekly">أسبوعي</string>
+    <string name="recurrence_weekday">في أيام محددة</string>
+    <string name="recurrence_every_n_days">كل %1$d أيام</string>
+    <string name="recurrence_every_n_weeks">كل %1$d أسابيع</string>
+    <string name="recurrence_monthly">شهري</string>
+    <string name="recurrence_yearly">سنوي</string>
+
+    <!-- Task Filters & Tabs -->
+    <string name="tab_all">الكل</string>
+    <string name="tab_today">اليوم</string>
+    <string name="tab_upcoming">القادمة</string>
+    <string name="tab_overdue">المتأخرة</string>
+    <string name="tab_completed">المكتملة</string>
+    <string name="filter_search_hint">ابحث في المهام والملاحظات والتصنيفات...</string>
+    <string name="filter_all_categories">جميع التصنيفات</string>
+    <string name="filter_all_priorities">جميع الأولويات</string>
+    <string name="sort_by">ترتيب حسب</string>
+    <string name="sort_date">التاريخ والوقت</string>
+    <string name="sort_priority">الأولوية</string>
+    <string name="sort_title">العنوان</string>
+
+    <!-- Categories -->
+    <string name="category_work">عمل</string>
+    <string name="category_study">دراسة</string>
+    <string name="category_programming">برمجة</string>
+    <string name="category_personal">شخصي</string>
+    <string name="category_home">منزل</string>
+    <string name="category_shopping">تسوق</string>
+    <string name="category_health">صحة</string>
+    <string name="category_other">أخرى</string>
+    <string name="add_category">إضافة تصنيف</string>
+    <string name="category_name">اسم التصنيف</string>
+    <string name="category_in_use_error">لا يمكن حذف التصنيف لوجود مهام مرتبطة به.</string>
+
+    <!-- Statistics -->
+    <string name="stats_today">المهام المكتملة اليوم</string>
+    <string name="stats_week">المهام المكتملة هذا الأسبوع</string>
+    <string name="stats_month">المهام المكتملة هذا الشهر</string>
+    <string name="stats_rate">نسبة الإنجاز</string>
+    <string name="stats_current_streak">التتابع الحالي</string>
+    <string name="stats_best_streak">أفضل تتابع</string>
+    <string name="stats_days_suffix">أيام</string>
+    <string name="stats_by_day">الإنتاجية حسب اليوم</string>
+    <string name="stats_by_category">المهام حسب التصنيف</string>
+
+    <!-- Settings -->
+    <string name="settings_appearance">المظهر</string>
+    <string name="theme_light">فاتح</string>
+    <string name="theme_dark">داكن</string>
+    <string name="theme_system">تلقائي حسب النظام</string>
+    <string name="settings_language">اللغة</string>
+    <string name="lang_english">الإنجليزية (LTR)</string>
+    <string name="lang_arabic">العربية (RTL)</string>
+    <string name="settings_notifications">إعدادات الإشعارات</string>
+    <string name="enable_notifications">تفعيل الإشعارات</string>
+    <string name="sound_enabled">الصوت</string>
+    <string name="vibration_enabled">الاهتزاز</string>
+    <string name="settings_task">الإعدادات الافتراضية للمهام</string>
+    <string name="default_duration">المدة الافتراضية للمهمة</string>
+    <string name="first_day_of_week">أول يوم في الأسبوع</string>
+    <string name="settings_data">إدارة البيانات</string>
+    <string name="export_data">تصدير نسخة احتياطية (JSON)</string>
+    <string name="import_data">استيراد نسخة احتياطية (JSON)</string>
+    <string name="sample_data">تحميل بيانات تجريبية</string>
+    <string name="clear_sample_data">حذف البيانات التجريبية</string>
+    <string name="settings_about">عن التطبيق</string>
+    <string name="app_version">الإصدار 1.0.0 (Native Android)</string>
+    <string name="privacy_policy">يعمل بدون إنترنت: جميع بياناتك محفوظة محلياً على جهازك.</string>
+
+    <!-- Validation & Errors -->
+    <string name="err_empty_title">عنوان المهمة لا يمكن أن يكون فارغاً</string>
+    <string name="err_invalid_time">وقت الانتهاء يجب أن يكون بعد وقت البدء</string>
+    <string name="err_invalid_date">يرجى اختيار تاريخ صحيح</string>
+    <string name="msg_task_saved">تم حفظ المهمة بنجاح</string>
+    <string name="msg_task_deleted">تم حذف المهمة</string>
+    <string name="msg_snoozed">تم تأجيل التذكير</string>
+</resources>
