@@ -39,6 +39,11 @@ jobs:
 
       - name: Setup Capacitor Android Platform
         run: |
+          # Remove any leftover reference directories from earlier migrations
+          rm -rf android-compose-reference
+          # Remove any invalid kts files if accidentally copied
+          find android/ -name "*.kts" -delete 2>/dev/null || true
+
           if [ ! -d "android" ]; then
             npx cap add android
           else
@@ -55,7 +60,7 @@ jobs:
       - name: Assemble Debug APK with Gradle
         run: |
           cd android
-          ./gradlew assembleDebug --stacktrace -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=512m"
+          ./gradlew assembleDebug --stacktrace -b build.gradle -Dorg.gradle.jvmargs="-Xmx3072m -XX:MaxMetaspaceSize=512m"
 
       - name: Locate and Prepare APK
         run: |
